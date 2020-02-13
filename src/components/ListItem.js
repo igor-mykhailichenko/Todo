@@ -15,8 +15,8 @@ class ListItem extends React.Component {
   render() {
     const isChecked = this.props.item.status === "done";
 
-    return <div className="row">
-      <div className="col-xs-9">
+    return <div className="row list-item">
+      <div className="col-md-12">
         <div className="input-group-item inline-bloke">
           <div className="col-lg-1">
             <input
@@ -36,7 +36,7 @@ class ListItem extends React.Component {
           </div>
           <div className="col-lg-1">
             <button type="button" className="btn btn-danger" onClick={() => this.props.deleteTodo(this.props.item.id)}>
-              Delete
+              <span className="glyphicon glyphicon-trash" aria-hidden="true" />
             </button>
           </div>
         </div>

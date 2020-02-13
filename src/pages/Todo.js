@@ -19,7 +19,12 @@ class Todo extends React.Component {
 
   render() {
     return <div className="row">
-      <div className="col-xs-9">
+    <div className="row header">
+      <div className="page-header col-md-6 col-md-offset-3">
+        <h1>ToDo</h1>
+      </div>
+    </div>
+      <div className="col-md-6 col-md-offset-3">
         <div className="input-group">
           <input type="text"
                  className="form-control"
@@ -27,8 +32,8 @@ class Todo extends React.Component {
                  onChange={e => this.setState({todo: e.target.value})}
           />
           <span className="input-group-btn">
-            <button className="btn btn-default" type="button" onClick={this.onSubmit}>
-              ADD
+            <button className="btn btn-success" type="button" onClick={this.onSubmit}>
+              <span className="glyphicon glyphicon-plus" aria-hidden="true" />
             </button>
           </span>
         </div>

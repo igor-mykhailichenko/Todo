@@ -16,13 +16,16 @@ const initialState = {
 const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
-      const todo = {
-        id: `${Math.random() * Math.random()}`,
-        status: "active",
-        name: action.todo
-      };
+      if (action.todo !== "") {
+        const todo = {
+          id: `${Math.random() * Math.random()}`,
+          status: "active",
+          name: action.todo
+        };
 
-      return { ...state, list: [...state.list, todo] };
+        return { ...state, list: [...state.list, todo] };
+      }
+      return {...state};
     case REMOVE_TODO:
       return { ...state, list: state.list.filter(item => item.id !== action.id) };
     case DONE_TODO:
@@ -37,15 +40,6 @@ const todoReducer = (state = initialState, action) => {
       return { ...state, list };
     case SHOW_FILTER:
       return { ...state, mode: action.filter };
-      // Change "mode"
-
-      // if (action.filter === "done") {
-      //   return { ...state, list: state.list.filter(el => el.status === "done") };
-      // }
-      // if (action.filter === "active") {
-      //   return { ...state, list: state.list.filter(el => el.status === "active") };
-      // }
-      return state;
     case SELECT_ALL:
       const newList = state.list.slice();
 

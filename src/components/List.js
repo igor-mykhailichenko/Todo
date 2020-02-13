@@ -19,7 +19,7 @@ class List extends React.Component {
 
   render() {
     return <div className="row">
-      <div className="col-xs-9">
+      <div className="col-md-12">
         <ul className="">
           {this.getFilteredItems().map(item => (
             <ListItem
@@ -28,10 +28,10 @@ class List extends React.Component {
             />
           ))}
         </ul>
-      <div className="btn-group">
+      <div className="btn-group col-md-offset-3">
         <button
           type="button"
-          className={`btn btn-outline-primary ${this.props.mode === "all" && "active"}`}
+          className={`btn btn-success ${this.props.mode === "all" && "active"}`}
           onClick={() => {
             this.props.showFilter("all");
           }}
@@ -40,27 +40,27 @@ class List extends React.Component {
         </button>
         <button
           type="button"
-          className={`btn btn-outline-secondary ${this.props.mode === "done" && "active"}`}
+          className={`btn btn-info ${this.props.mode === "done" && "active"}`}
           onClick={() => this.props.showFilter("done")}
         >
           Done
         </button>
         <button
           type="button"
-          className={`btn btn-outline-success ${this.props.mode === "active" && "active"}`}
+          className={`btn btn-primary ${this.props.mode === "active" && "active"}`}
           onClick={() => this.props.showFilter("active")}
         >
           Active
         </button>
-        <button type="button" className="btn btn-default" onClick={() => this.props.removeDone()}>
-          Clear completed
+        <button type="button" className="btn btn-danger" onClick={() => this.props.removeDone()}>
+          Remove checked
         </button>
         <button
           type="button"
-          className={`btn btn-outline-success ${this.props.allChecked && "active"}`}
+          className={`btn btn-success ${this.props.allChecked && "active"}`}
           onClick={() => this.props.chooseAll()}
         >
-          Check all
+          <span className="glyphicon glyphicon-check" aria-hidden="true" />
         </button>
       </div>
       </div>
