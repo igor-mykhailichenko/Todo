@@ -15,10 +15,10 @@ class ListItem extends React.Component {
   render() {
     const isChecked = this.props.item.status === "done";
 
-    return <div className="row list-item">
+    return <div className="row list-item col-lg-offset-1">
       <div className="col-md-12">
         <div className="input-group-item inline-bloke">
-          <div className="col-lg-1">
+          <div className="col-lg-1 checkbox-item">
             <input
               checked={isChecked}
               id={`checkbox-${this.props.item.id}`}
@@ -27,7 +27,7 @@ class ListItem extends React.Component {
               onChange={e => this.props.markTodo(this.props.item.id, e.target.checked)}
             />
           </div>
-          <div className="col-lg-9">
+          <div className="col-lg-10">
               <label htmlFor={`checkbox-${this.props.item.id}`}>
                 {" "}
                 {this.props.item.name}
@@ -35,8 +35,8 @@ class ListItem extends React.Component {
               </label>
           </div>
           <div className="col-lg-1">
-            <button type="button" className="btn btn-danger" onClick={() => this.props.deleteTodo(this.props.item.id)}>
-              <span className="glyphicon glyphicon-trash" aria-hidden="true" />
+            <button type="button" className="btn btn-danger btn-xs" onClick={() => this.props.deleteTodo(this.props.item.id)}>
+              <span className="glyphicon glyphicon-remove" aria-hidden="true" />
             </button>
           </div>
         </div>

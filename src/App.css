@@ -1,9 +1,18 @@
 .header {
-  background-color: cornflowerblue;
-  color: cornsilk;
+  background-color: #bec2c6;
+  color: #ffffff;
   margin-bottom: 5px;
 }
 
 .list-item {
   margin-top: 5px;
+  background-color: #bec2c6;
+  border-radius: 10px;
+  height: 40px;
+  padding-top: 10px;
+  width: 80%;
+}
+
+.checkbox-item {
+  width: 20px;
 }

@@ -23,7 +23,7 @@ const todoReducer = (state = initialState, action) => {
           name: action.todo
         };
 
-        return { ...state, list: [...state.list, todo] };
+        return { ...state, list: [todo, ...state.list] };
       }
       return {...state};
     case REMOVE_TODO:
