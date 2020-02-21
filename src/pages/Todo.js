@@ -27,23 +27,23 @@ class Todo extends React.Component {
   };
 
   render() {
-    return <div className="row">
-    <div className="row header">
-      <div className="page-header col-md-6 col-md-offset-3">
-        <h1>ToDo</h1>
+    return <div>
+      <div className="row header">
+        <div className="page-header col-md-6 col-lg-6 col-xs-6 col-md-offset-3 col-lg-offset-3">
+          <span className="header-text">Todo</span>
+        </div>
       </div>
-    </div>
-      <div className="col-md-6 col-md-offset-3">
-        <div className="input-group" >
+      <div className="col-md-6 col-lg-6 col-sm-6 col-xs-6 col-md-offset-3 col-lg-offset-3">
+        <div className="input-group">
           <input type="text"
                  value={this.state.todo}
-                 className="form-control"
+                 className="form-control input-todo"
                  placeholder="Type a task..."
                  onChange={e => this.setState({todo: e.target.value})}
                  onKeyDown={e => this.inputEnter(e)}
           />
           <span className="input-group-btn">
-            <button className="btn btn-success"
+            <button className="btn btn-default button-plus"
                     type="button"
                     onClick={this.onSubmit}
                     onKeyDown={e => this.inputEnter(e)}

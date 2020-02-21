@@ -19,64 +19,52 @@ class List extends React.Component {
 
   render() {
     return <div className="row">
+      <div className="row navigation">
+        <div className="btn-group col-md-offset-4 col-lg-offset-4 col-sm-offset-4 col-xs-offset-4">
+          <button
+            type="button"
+            className={`btn btn-success button-plus ${this.props.allChecked && "active"}`}
+            onClick={() => this.props.chooseAll()}
+          >
+            <span className="glyphicon glyphicon-check" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            className={`btn btn-default button-plus ${this.props.mode === "all" && "active"}`}
+            onClick={() => {
+              this.props.showFilter("all");
+            }}
+          >
+            All
+          </button>
+          <button
+            type="button"
+            className={`btn btn-default button-plus ${this.props.mode === "done" && "active"}`}
+            onClick={() => this.props.showFilter("done")}
+          >
+            Done
+          </button>
+          <button
+            type="button"
+            className={`btn btn-default button-plus ${this.props.mode === "active" && "active"}`}
+            onClick={() => this.props.showFilter("active")}
+          >
+            Active
+          </button>
+          <button type="button" className="btn btn-danger button-plus" onClick={() => this.props.removeDone()}>
+            <span className="glyphicon glyphicon-minus" aria-hidden="true" />
+          </button>
+        </div>
+      </div>
       <div className="row">
         <ul>
-
-          <div className="row list-item col-lg-offset-1">
-            <div className="col-md-12">
-              <div className="input-group-item inline-bloke">
-                <div className="col-lg-1">
-                  <button
-                    type="button"
-                    className={`btn btn-success btn-xs ${this.props.allChecked && "active"}`}
-                    onClick={() => this.props.chooseAll()}
-                  >
-                    <span className="glyphicon glyphicon-check" aria-hidden="true" />
-                  </button>
-                </div>
-                <div className="col-lg-10">
-                </div>
-                <div className="col-lg-1">
-                  <button type="button" className="btn btn-danger btn-xs" onClick={() => this.props.removeDone()}>
-                    <span className="glyphicon glyphicon-minus" aria-hidden="true" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
           {this.getFilteredItems().map(item => (
             <ListItem
               key={item.id}
               item={item}
             />
           ))}
-
         </ul>
-      <div className="btn-group col-md-offset-5">
-        <button
-          type="button"
-          className={`btn btn-default ${this.props.mode === "all" && "active"}`}
-          onClick={() => {
-            this.props.showFilter("all");
-          }}
-        >
-          All
-        </button>
-        <button
-          type="button"
-          className={`btn btn-default ${this.props.mode === "done" && "active"}`}
-          onClick={() => this.props.showFilter("done")}
-        >
-          Done
-        </button>
-        <button
-          type="button"
-          className={`btn btn-default ${this.props.mode === "active" && "active"}`}
-          onClick={() => this.props.showFilter("active")}
-        >
-          Active
-        </button>
-      </div>
       </div>
     </div>;
   }
