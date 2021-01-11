@@ -1,0 +1,47 @@
+body {
+  background-color: #f9d29d;
+  background-image: linear-gradient(315deg, #f9d29d 0%, #ffd8cb 74%);
+}
+
+.header {
+  background-color: #2d3436;
+  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  color: #ffffff;
+  margin-bottom: 5px;
+  width: 100.9%;
+}
+
+.header-text {
+  font-size: 75px;
+  font-family: Arial Black;
+  color: #e2ac6b;
+}
+
+.button-plus {
+  color: #e2ac6b !important;
+  background-color: black !important;
+  border: 1px solid #000000 !important;
+}
+
+.list-item {
+  margin-top: 10px;
+  background-color: #e2ac6b;
+  border-radius: 10px;
+  height: 40px;
+  padding-top: 10px;
+  width: 80%;
+  border: 1px solid #000000;
+}
+
+.checkbox-item {
+  width: 20px;
+}
+
+.input-todo {
+  border: 1px solid #000000 !important;
+}
+
+.navigation {
+  padding-top: 10px;
+  margin-left: 40px !important;
+}
